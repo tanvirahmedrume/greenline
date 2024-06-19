@@ -38,6 +38,15 @@ const j1 = document.getElementById("j1");
 const j2 = document.getElementById("j2");
 const j3 = document.getElementById("j3");
 const j4 = document.getElementById("j4");
+const seat1 = document.getElementById("seatName1");
+const seat2 = document.getElementById("seatName2");
+const seat3 = document.getElementById("seatName3");
+const seat4 = document.getElementById("seatName4");
+const price1 = document.getElementById("price1");
+const price2 = document.getElementById("price2");
+const price3 = document.getElementById("price3");
+const price4 = document.getElementById("price4");
+const totalPrice = document.getElementById("totalPrice");
 
 let bookedTickets = 0;
 
@@ -47,13 +56,20 @@ function ticketSeletedA() {
       a1.style.color = '';
       a1.style.background = '';
       a1.classList.remove('booked');
+      seat1.innerText = 'seat name';
+      price1.innerText = '00';
       bookedTickets--;
     } else {
       a1.style.background = '#1DD100';
       a1.style.color = 'white';
       a1.classList.add('booked');
+      seat1.innerText= 'A1'
+      price1.innerText= '550';
+    //   price1.innerText = '550';
       bookedTickets++;
     }
+    priceCount();
+
     ticketCount();
   })
 
@@ -62,13 +78,18 @@ function ticketSeletedA() {
       a2.style.color = '';
       a2.style.background = '';
       a2.classList.remove('booked');
+      seat2.innerText = 'seat name';
+      price2.innerText = '00';
       bookedTickets--;
     } else {
       a2.style.background = '#1DD100';
       a2.style.color = 'white';
       a2.classList.add('booked');
+      seat2.innerText = 'A2'
+      price2.innerText = '550'
       bookedTickets++;
     }
+    priceCount();
     ticketCount();
   })
 
@@ -77,13 +98,18 @@ function ticketSeletedA() {
       a3.style.color = '';
       a3.style.background = '';
       a3.classList.remove('booked');
+      seat3.innerText = 'seat name';
+      price3.innerText = '00';
       bookedTickets--;
     } else {
       a3.style.background = '#1DD100';
       a3.style.color = 'white';
       a3.classList.add('booked');
+      seat3.innerText = 'A3'
+      price3.innerText = '550'
       bookedTickets++;
     }
+    priceCount();
     ticketCount();
   })
 
@@ -92,13 +118,18 @@ function ticketSeletedA() {
       a4.style.color = '';
       a4.style.background = '';
       a4.classList.remove('booked');
+      seat4.innerText = 'seat name';
+      price4.innerText = '00';
       bookedTickets--;
     } else {
       a4.style.background = '#1DD100';
       a4.style.color = 'white';
       a4.classList.add('booked');
+        seat4.innerText = 'A4'
+      price4.innerText = '550'
 bookedTickets++;
     }
+    priceCount();
     ticketCount();
   })
 }
@@ -109,13 +140,18 @@ function ticketSeletedB(){
             b1.style.color = '';
             b1.style.background = '';
             b1.classList.remove('booked');
+            seat1.innerText = 'seat name';
+            price1.innerHTML = '00';
             bookedTickets--;
         }else{
             b1.style.color = 'white';
             b1.style.background = '#1DD100';
             b1.classList.add('booked');
+            seat1.innerText = 'B1';
+            price1.innerHTML = '550';
             bookedTickets++;
         }
+        priceCount();
         ticketCount();
     })
     
@@ -663,6 +699,12 @@ function ticketSeletedJ(){
 
 function ticketCount(){
   console.log(`Total booked tickets: ${bookedTickets}`);
+}
+
+function priceCount(params) {
+   let total =   parseInt(bookedTickets) * parseInt(550);
+
+    totalPrice.innerHTML = total;
 }
 
 ticketSeletedA();
