@@ -136,6 +136,7 @@ bookedTickets++;
 
 function ticketSeletedB(){
     b1.addEventListener('click', ()=>{
+
         if (b1.classList.contains('booked')) {
             b1.style.color = '';
             b1.style.background = '';
@@ -147,7 +148,7 @@ function ticketSeletedB(){
             b1.style.color = 'white';
             b1.style.background = '#1DD100';
             b1.classList.add('booked');
-            seat1.innerText = 'B1';
+
             price1.innerHTML = '550';
             bookedTickets++;
         }
